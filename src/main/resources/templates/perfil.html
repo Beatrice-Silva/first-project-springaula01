@@ -12,17 +12,22 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
     
     
     <body>
+        
+        <nav>
+            <a href="/painel">Painel</a>
+
+        </nav>
         <p>Perfil:</p>
-            <a href="/perfil">Perfil</a>
+           
             <a href="/portal">Página Inicial</a>
             <a href="/servicos">Serviços</a>
             <a href="/contato">Contato</a>
+            <a href="/perfil">Perfil</a>
             
         <h2> Nome do Usuário: <span th:text="${nome}"></span></h2>
         <h3>Nome do Cruso: <span th:text="${curso}"></span></h3>
         <h3> Linguagem Favorita:<span th:text="${linguagemfavorita}"></span></h3>
-        
-        
+
         
     </body>
 </html>

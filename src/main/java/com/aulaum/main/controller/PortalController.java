@@ -15,15 +15,23 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class PortalController {
     
     @GetMapping("/portal")
-    public String abrilPortal() {
+    public String Portal() {
         return "portal";
     }
     @GetMapping("/servicos")
-    public String abrilServico() {
+    public String Servico() {
         return "servicos";
     }
     @GetMapping("/contato")
-    public String abrilContato() {
-            return "contato";
+    public String Contato() {
+        return "contato";
     }
-}
+
+ }
+    
+    
+    
+    
+    
+            
+

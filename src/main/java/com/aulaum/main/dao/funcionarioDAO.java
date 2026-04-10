@@ -15,10 +15,10 @@ import java.util.List;
 /**
  *
  * @author Aluno
- */
+ */ 
 public class FuncionarioDAO {
     
-    public List<FuncionarioBean> listarFuncionario(){
+    public List<FuncionarioBean> listarFuncionarios(){
         List<FuncionarioBean> lista = new ArrayList();
         try{
             Connection conn = Conexao.conectar();
@@ -33,21 +33,73 @@ public class FuncionarioDAO {
                 funcionario.setId(rs.getInt("id"));
                 funcionario.setNome(rs.getString("nome"));
                 funcionario.setCargo(rs.getString("cargo"));
-                funcionario.setDepartamento(rs.getString("departamaneto"));
+                funcionario.setDepartamento(rs.getString("departamento"));
                 funcionario.setEmail(rs.getString("email"));
                 
                 funcionario.setDataContratacao(rs.getDate("data_contratacao"));
                 
-                lista.add(funcionario);
-                
+                lista.add(funcionario);       
             }
             
         } catch(SQLException e){
             e.printStackTrace();
-        }
-            
-        
+        }        
         return lista;
     }
     
+    public List<FuncionarioBean> funcDepartamento(){
+        List<FuncionarioBean> lista2 = new ArrayList();
+         
+         try{
+             
+             Connection conn = Conexao.conectar();
+             PreparedStatement stmt = null;
+             ResultSet rs = null;
+             
+             
+             stmt = conn.prepareStatement("SELECT * FROM funcionario WHERE departamento = 'Tecnologia'");
+             rs = stmt.executeQuery();
+             
+                while(rs.next()) {
+                FuncionarioBean funcionario = new FuncionarioBean();
+                
+                funcionario.setId(rs.getInt("id"));
+                funcionario.setNome(rs.getString("nome"));
+                funcionario.setDepartamento(rs.getString("departamento"));
+                
+                lista2.add(funcionario);       
+            }
+            
+         }catch(SQLException e){
+             e.printStackTrace();
+         }
+        return lista2;
+    }
+    
+    public int totalFuncionarios(){
+        int total = 0;
+        
+        try{
+            Connection conn = Conexao.conectar();
+            PreparedStatement stmt = null;
+            ResultSet rs = null;
+            
+            stmt = conn.prepareStatement("SELECT COUNT(*) as total FROM funcionario");
+            rs = stmt.executeQuery();
+            
+            if(rs.next()){
+                
+                total = rs.getInt("total");
+            }
+            
+        }catch(SQLException e){
+            e.printStackTrace();
+        }
+        
+      return total;  
+    }
+            
+        
+
+       
 }

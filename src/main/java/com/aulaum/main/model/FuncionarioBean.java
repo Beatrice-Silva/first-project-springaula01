@@ -15,6 +15,8 @@ public class FuncionarioBean {
     private String departamento;
     private String email;
     private Date dataContratacao;
+    
+    private  int totalFunc;
 
     public FuncionarioBean() {
     }
@@ -26,6 +28,7 @@ public class FuncionarioBean {
         this.departamento = departamento;
         this.email = email;
         this.dataContratacao = dataContratacao;
+        
     }
 
     public int getId() {
@@ -75,6 +78,7 @@ public class FuncionarioBean {
     public void setDataContratacao(Date dataContratacao) {
         this.dataContratacao = dataContratacao;
     }
+
     
     
     
