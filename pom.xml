@@ -11,7 +11,11 @@
 	<groupId>com.aulaum</groupId>
 	<artifactId>main</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+<<<<<<< HEAD
 	<name>Main</name>
+=======
+	<name/>
+>>>>>>> 3fda0d9c647003da95504d6246747df7fbc4407d
 	<description/>
 	<url/>
 	<licenses>
